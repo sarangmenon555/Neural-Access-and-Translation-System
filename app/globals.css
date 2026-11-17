@@ -190,3 +190,8 @@ details summary { cursor: pointer; font-weight: 640; min-height: 32px; }
 .meter span { background: linear-gradient(90deg, #f0801f, #1f9d74); }
 .fill { background: linear-gradient(90deg, #0b6e4f, #1f9d74); }
 .pill.ok { color: var(--good); }
+
+.logo { flex: none; width: 42px; height: 42px; color: var(--ink); filter: drop-shadow(0 0 10px rgba(240, 128, 31, 0.35)); }
+@media (max-width: 860px) { .logo { width: 36px; height: 36px; } }
+
+.logo { border-radius: 12px; object-fit: cover; color: inherit; }

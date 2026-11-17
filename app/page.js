@@ -42,6 +42,10 @@ const pct = (v) => Math.round(v * 1000) / 10 + "%";
 const day = (t) => new Date(t).toLocaleDateString(undefined, { month: "short", day: "numeric" });
 const nearest = (th) => LEVELS.reduce((a, b) => (Math.abs(b[1] - th) < Math.abs(a[1] - th) ? b : a))[1];
 
+function Logo() {
+  return <img className="logo" src="/logo.png" alt="NATS logo" width="42" height="42" />;
+}
+
 function Ring({ tone, label }) {
   const stroke = tone === "bad" ? "url(#gbad)" : tone === "good" ? "url(#ggood)" : "url(#goff)";
   const sub = tone === "off" ? "Wearable is off" : tone === "bad" ? "Check now" : "Monitoring";
@@ -320,7 +324,7 @@ export default function Page() {
     <div className="app" data-tone={tone}>
       <a className="skip" href="#main">Skip to content</a>
       <aside className="side">
-        <div className="brand"><span className="mark" /><span className="bname">NATS <small>(Neural Access &amp; Translation System)</small></span>{live && <span className="dot" title="Wearable live" />}</div>
+        <div className="brand"><Logo /><span className="bname">NATS <small>(Neural Access &amp; Translation System)</small></span>{live && <span className="dot" title="Wearable live" />}</div>
         <div className="brandsub">Neural Access &amp; Translation System</div>
         <nav className="nav" aria-label="Main">
           {NAV.map(([k, l]) => (
